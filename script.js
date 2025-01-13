@@ -27,11 +27,14 @@ themeToggle.addEventListener('click', () => {
     }
 });
 
+// CORS proxy URL (for handling CORS issues in browser)
+const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
+
 // Fetch movie data
 async function fetchMovies(query) {
     const url = `https://www.omdbapi.com/?s=${query}&apikey=${apiKey}`;
     try {
-        const response = await fetch(url);
+        const response = await fetch(proxyUrl + url);
         const data = await response.json();
         if (data.Response === "True") {
             return data.Search;
@@ -50,7 +53,7 @@ async function fetchMovies(query) {
 async function fetchMovieDetails(imdbID) {
     const url = `https://www.omdbapi.com/?i=${imdbID}&apikey=${apiKey}`;
     try {
-        const response = await fetch(url);
+        const response = await fetch(proxyUrl + url);
         const data = await response.json();
         return data;
     } catch (error) {
