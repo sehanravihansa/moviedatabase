@@ -1,0 +1,254 @@
+/* Base Styles */
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0; /* Light mode background */
+    color: #333; /* Light mode text color */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
+}
+
+header {
+    background-color: #282c34; /* Dark header background */
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+h1 {
+    margin: 0;
+}
+
+.search-bar {
+    margin-top: 10px;
+}
+
+input[type="text"] {
+    padding: 10px;
+    width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus {
+    border-color: #e50914;
+    outline: none;
+}
+
+/* Navigation Button Styles */
+.nav-button {
+    margin-top: 10px; /* Space above the button */
+    padding: 10px 15px;
+    background-color: #e50914; /* Button background */
+    color: white;
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+}
+
+.nav-button:hover {
+    background-color: #d40812; /* Button hover color */
+}
+
+
+button {
+    padding: 10px 15px;
+    background-color: #e50914; /* Button background */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #d40812; /* Button hover color */
+}
+
+/* Recommendations Container Styles */
+#recommendations-container {
+    padding: 20px;
+}
+
+/* Card Styles */
+.card {
+    background-color: #f8f8f8; /* Light background color */
+    border: 1px solid #ddd; /* Light border */
+    border-radius: 5px; /* Rounded corners */
+    padding: 15px; /* Padding inside the card */
+    margin: 10px 0; /* Margin between cards */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.card h4 {
+    margin: 0; /* Remove default margin */
+}
+
+/* Recommendations Heading Styles */
+h3 {
+    margin-bottom: 15px; /* Space below heading */
+}
+
+/* Movie Cards Container */
+#movie-container {
+    display: flex;               /* Use flexbox for horizontal layout */
+    overflow-x: auto;          /* Allow horizontal scrolling */
+    padding: 20px;             /* Add padding around the container */
+}
+
+/* Movie Card Styles */
+.movie-card {
+    background-color: white; 
+    border-radius: 8px; 
+    margin-right: 15px;        /* Space between cards */
+    padding: 10px;             /* Reduced padding for a cleaner look */
+    width: 180px;              /* Fixed width for cards */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+}
+
+.movie-card:last-child {
+   margin-right: 0;           /* Remove margin from the last card */
+}
+
+.movie-card:hover {
+   transform: translateY(-5px);
+   box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.movie-card img {
+   width: 100%;               /* Maintain full width of the card */
+   border-radius: 8px; 
+   height: auto;              /* Maintain aspect ratio */
+}
+
+.movie-card h3 {
+   font-size: 16px;           /* Adjusted font size for title */
+   margin-top: 10px;          /* Space above title */
+   margin-bottom: 5px;        /* Space below title */
+   color: #333;               /* Darker color for better readability */
+}
+
+.movie-card p {
+   font-size: 14px;           /* Smaller font size for release date */
+   color: #666;               /* Lighter gray for less emphasis */
+   margin-bottom: 10px;       /* Space below paragraph */
+}
+
+/* Modal Styles */
+.modal {
+   display: none; 
+   position: fixed; 
+   z-index: 1; 
+   left: 0; 
+   top: 0; 
+   width: 100%; 
+   height: 100%; 
+   background-color: rgba(0,0,0,0.7); 
+}
+
+.modal-content {
+   background-color: #fff; 
+   margin: auto; 
+   padding: 20px; 
+   border-radius: 8px; 
+   width: 80%; 
+}
+
+/* Close Modal Button Styles */
+#close-modal {
+   color: #aaa; 
+   float: right; 
+   font-size: 28px; 
+   cursor:pointer; 
+}
+
+#close-modal:hover {
+   color:black; 
+}
+
+/* Dark Mode Styles */
+.dark-mode {
+    background-color: #121212; /* Dark mode background */
+    color: white; /* Dark mode text color */
+}
+
+.dark-mode header {
+    background-color: #1e1e1e; /* Darker header background in dark mode */
+}
+
+.dark-mode .search-bar input[type="text"] {
+    border-color: #555555;
+}
+
+.dark-mode button {
+    background-color: #e50914;
+}
+
+.dark-mode button:hover {
+    background-color: #d40812;
+}
+
+.dark-mode .movie-card {
+    background-color: #2a2a2a; /* Darker card background in dark mode */
+}
+
+.dark-mode .movie-card h3,
+.dark-mode .movie-card p {
+    color:white; /* Text color for movie cards in dark mode */
+}
+
+.dark-mode .modal-content {
+    background-color:#333333; /* Darker modal content in dark mode */
+}
+
+/* Theme Toggle Button Styles */
+.theme-toggle {
+    position: fixed; /* Fixes the button in place */
+    top: 20px; /* Distance from the top of the viewport */
+    right: 20px; /* Distance from the right of the viewport */
+    background-color: transparent; /* Transparent background to blend in */
+    color: #e50914; /* Subtle color for text in light mode */
+    border-radius :5px ;/* Slightly rounded corners for aesthetics*/
+}
+
+/* Dark Mode Styles for Toggle Button Text Visibility*/
+.dark-mode .theme-toggle {
+     color :#ffcc00 ;/* Change text color for better visibility in dark mode*/
+     background-color : rgba(255,255,255,.1) ;/* Subtle white background in dark mode*/
+}
+.theme-toggle:hover {
+     opacity : .7 ;
+}
+
+/* Trivia Page Styles */
+/* Trivia Container Styles */
+#trivia-container {
+    padding: 20px;
+}
+
+/* Question Container Styles */
+.question-container {
+    margin-bottom: 20px;
+}
+
+/* Answers Container Styles */
+.answers-container {
+    display:flex ;
+     flex-direction : column ;/* Stack answers vertically*/
+}
+
+/* Answer Button Styles*/
+.answer-button {
+     padding :10px ;
+     margin :5px ;
+     background-color :#e50914 ;/* Button background*/
+     color :white ;
+     border:none ;
+     border-radius :5px ;
+     cursor:pointer ;
+}
+.answer-button:hover{
+     opacity:.8 ;/* Slightly decrease opacity on hover for feedback*/
+}

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Recommendations - Movie Explorer</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <h1>🎬 Movie Recommendations</h1>
+        <div class="search-bar">
+            <input type="text" id="movie-input" placeholder="Enter your favorite movie...">
+            <button id="recommend-button">Get Recommendations</button>
+        </div>
+        <button id="theme-toggle" class="theme-toggle">Toggle Dark/Light Mode</button> <!-- Toggle Button -->
+        <button id="trivia-button" class="nav-button">Trivia Challenge</button> <!-- Button to navigate to Trivia Page -->
+        <button id="home-button" class="nav-button">Home</button> <!-- Button to navigate to Home Page -->
+    </header>
+
+    <!-- Recommendations Container -->
+    <main id="recommendations-container">
+        <h2>Recommended Movies:</h2>
+        <div id="recommendations"></div>
+    </main>
+
+    <script src="recommendations.js"></script> <!-- Corrected the filename here -->
+    <script src="theme.js"></script> <!-- JavaScript file for theme toggle -->
+
+    <!-- Add this script to handle navigation -->
+    <script>
+        // Navigate to Trivia page
+        document.getElementById('trivia-button').addEventListener('click', function() {
+            window.location.href = 'trivia.html'; // Navigate to the Trivia page
+        });
+
+        // Navigate to Home page (index.html)
+        document.getElementById('home-button').addEventListener('click', function() {
+            window.location.href = 'index.html'; // Navigate to the Home page
+        });
+    </script>
+</body>
+</html>

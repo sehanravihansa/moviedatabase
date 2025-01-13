@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Trivia - Movie Explorer</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <h1>🎬 Movie Trivia Challenge</h1>
+        <button id="theme-toggle" class="theme-toggle">Toggle Dark/Light Mode</button>
+    </header>
+
+    <!-- Trivia Container -->
+    <main id="trivia-container">
+        <div class="question-container">
+            <h2 id="question">Loading question...</h2>
+            <div class="answers-container" id="answers"></div>
+        </div>
+        <div class="status-bar">
+            <p>Score: <span id="score">0</span></p>
+            <button id="next-button" style="display: none;">Next Question</button>
+        </div>
+    </main>
+
+    <script src="trivia.js"></script> <!-- JavaScript file for trivia functionality -->
+    <script src="theme.js"></script> <!-- JavaScript file for theme toggle -->
+</body>
+</html>

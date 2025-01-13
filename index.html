@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Explorer</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <h1>🎬 Movie Database</h1>
+        <div class="search-bar">
+            <input type="text" id="search" placeholder="Search for a movie...">
+            <button id="searchBtn">Search</button>
+        </div>
+        <!-- Navigation Button to Trivia Page -->
+        <button id="trivia-button" class="nav-button">Trivia Challenge</button> <!-- Button to navigate to Trivia Page -->
+        <!-- Navigation Button to Movie Recommendations Page -->
+        <button id="recommendations-button" class="nav-button">Movie Recommendations</button> <!-- Button to navigate to Recommendations Page -->
+    </header>
+
+    <!-- Movie Cards Container -->
+    <main id="movie-container"></main>
+
+    <!-- Modal for Detailed Movie Info -->
+    <div id="movie-modal" class="modal">
+        <div class="modal-content">
+            <span id="close-modal">&times;</span>
+            <div id="modal-details"></div>
+        </div>
+    </div>
+
+    <!-- Theme Toggle Button -->
+    <button id="theme-toggle" class="theme-toggle">Toggle Dark/Light Mode</button> <!-- Toggle Button -->
+
+    <script src="script.js"></script> <!-- Your existing JavaScript file -->
+    <script src="theme.js"></script> <!-- New JavaScript file for theme toggle -->
+    
+    <!-- Add this script to handle navigation -->
+    <script>
+        // Navigate to Trivia page
+        document.getElementById('trivia-button').addEventListener('click', function() {
+            window.location.href = 'trivia.html'; // Navigate to the Trivia page
+        });
+
+        // Navigate to Movie Recommendations page
+        document.getElementById('recommendations-button').addEventListener('click', function() {
+            window.location.href = 'reccommendations.html'; // Navigate to the Recommendations page
+        });
+    </script>
+</body>
+</html>
