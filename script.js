@@ -29,15 +29,14 @@ themeToggle.addEventListener('click', () => {
 
 // Fetch movie data
 async function fetchMovies(query) {
-    const url = `https://www.omdbapi.com/?s=${encodeURIComponent(query)}&apikey=${apiKey}`;
-    console.log("Fetching movies with URL:", url); // Debug log
+    const url = `https://www.omdbapi.com/?s=${query}&apikey=${apiKey}`;
     try {
         const response = await fetch(url);
         const data = await response.json();
         if (data.Response === "True") {
             return data.Search;
         } else {
-            alert(`OMDb API Error: ${data.Error}`);
+            alert(data.Error); // Show API error
             return [];
         }
     } catch (error) {
@@ -49,8 +48,7 @@ async function fetchMovies(query) {
 
 // Fetch detailed movie data
 async function fetchMovieDetails(imdbID) {
-    const url = `https://www.omdbapi.com/?i=${encodeURIComponent(imdbID)}&apikey=${apiKey}`;
-    console.log("Fetching movie details with URL:", url); // Debug log
+    const url = `https://www.omdbapi.com/?i=${imdbID}&apikey=${apiKey}`;
     try {
         const response = await fetch(url);
         const data = await response.json();
@@ -110,8 +108,6 @@ searchBtn.addEventListener('click', async () => {
     if (query) {
         const movies = await fetchMovies(query);
         renderMovies(movies);
-    } else {
-        alert("Please enter a movie title to search.");
     }
 });
 
@@ -121,3 +117,5 @@ window.addEventListener('click', (event) => {
         modal.style.display = 'none';
     }
 });
+
+
