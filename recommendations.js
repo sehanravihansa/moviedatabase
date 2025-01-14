@@ -26,7 +26,12 @@ async function getRecommendations() {
 
     try {
         // Fetch movie details from OMDb API
-        const response = await fetch(`http://www.omdbapi.com/?t=${encodeURIComponent(movieTitle)}&apikey=${apiKey}`);
+        const response = await fetch(`https://www.omdbapi.com/?t=${encodeURIComponent(movieTitle)}&apikey=${apiKey}`);
+        
+        if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+
         const data = await response.json();
 
         if (data.Response === "True") {
@@ -46,7 +51,7 @@ async function getRecommendations() {
         }
     } catch (error) {
         console.error('Error fetching data:', error);
-        recommendationsContainer.innerHTML = `<p>An error occurred while fetching recommendations.</p>`;
+        recommendationsContainer.innerHTML = `<p>An error occurred while fetching recommendations: ${error.message}</p>`;
     }
 }
 
