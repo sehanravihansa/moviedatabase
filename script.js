@@ -27,19 +27,17 @@ themeToggle.addEventListener('click', () => {
     }
 });
 
-// CORS proxy URL (for handling CORS issues in browser)
-const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
-
 // Fetch movie data
 async function fetchMovies(query) {
-    const url = `https://www.omdbapi.com/?s=${query}&apikey=${apiKey}`;
+    const url = `https://www.omdbapi.com/?s=${encodeURIComponent(query)}&apikey=${apiKey}`;
+    console.log("Fetching movies with URL:", url); // Debug log
     try {
-        const response = await fetch(proxyUrl + url);
+        const response = await fetch(url);
         const data = await response.json();
         if (data.Response === "True") {
             return data.Search;
         } else {
-            alert(data.Error); // Show API error
+            alert(`OMDb API Error: ${data.Error}`);
             return [];
         }
     } catch (error) {
@@ -51,9 +49,10 @@ async function fetchMovies(query) {
 
 // Fetch detailed movie data
 async function fetchMovieDetails(imdbID) {
-    const url = `https://www.omdbapi.com/?i=${imdbID}&apikey=${apiKey}`;
+    const url = `https://www.omdbapi.com/?i=${encodeURIComponent(imdbID)}&apikey=${apiKey}`;
+    console.log("Fetching movie details with URL:", url); // Debug log
     try {
-        const response = await fetch(proxyUrl + url);
+        const response = await fetch(url);
         const data = await response.json();
         return data;
     } catch (error) {
@@ -111,6 +110,8 @@ searchBtn.addEventListener('click', async () => {
     if (query) {
         const movies = await fetchMovies(query);
         renderMovies(movies);
+    } else {
+        alert("Please enter a movie title to search.");
     }
 });
 
